@@ -1,18 +1,22 @@
 @php
 
+function ex($route) {
+  return route("xr.examples.{$route}");
+}
+
 $contents = [
   'Examples' => [
     'Getting Started' => [
-      'route' => route('xr.examples.getting-started'),
+      'route' => ex('getting-started'),
       'pages' => [
         'Introduction' => [
-          'route' => route('xr.examples.getting-started.introduction'),
+          'route' => ex('getting-started.introduction'),
         ],
         'Installation' => [
           'route' => '#',
         ],
         'Testing' => [
-
+          'route' => '#',
         ],
         'Reporting Issues' => [
           'route' => '#',
@@ -27,15 +31,22 @@ $contents = [
         ],
       ]
     ],
-    'Networking' => [
-      'route' => route('xr.examples.networking'),
+    'Modeling' => [
+      'route' => '#',
       'pages' => [
         'Overview' => [
-          'route' => route('xr.examples.networking.overview'),
+          'route' => '#',
         ],
       ]
     ],
-    ''
+    'Networking' => [
+      'route' => ex('networking'),
+      'pages' => [
+        'Overview' => [
+          'route' => ex('networking.overview'),
+        ],
+      ]
+    ],
   ],
 ];
 
