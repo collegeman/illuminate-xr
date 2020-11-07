@@ -12,7 +12,7 @@ This Laravel package aims to provide:
 
 * Patterns for creating reactive VR UI, powered by [Vue](https://vuejs.org/) and A-Frame
 * Laravel WebSockets pre-configured for self-hosting fast, scalable networked experiences
-* Provide familiar and comfortable networking experiences, with Lobbies and Rooms
+* Familiar and comfortable networked experiences including Lobbies and Rooms
 * Use [Cashier](https://laravel.com/docs/8.x/billing) to charge credit cards and manage paid subscriptions
 * Use [Socialite](https://laravel.com/docs/8.x/socialite) to allow visitors to login using their social media accounts and [many other providers](https://socialiteproviders.com/)
 * Add an API to your project using [Passport](https://laravel.com/docs/8.x/passport), and allow your users to have and manage profiles
@@ -27,8 +27,8 @@ Dramatically increased by the Coronavirus pandemic of 2020, the demand for remot
 calls on creatives to give birth to novel ways of fostering connection across distances. 
 There is ample space in that [greenfield project](https://en.wikipedia.org/wiki/Greenfield_project)
 for immersive experiences that connect people with each other and interact with new and old 
-ideas on a emotional visceral level—one that cannot be reached just by talking to a grid
-of faces displayed on a monitor.
+ideas on an emotional, even visceral level—a level of connection that cannot be achieved 
+just by talking to a grid of faces displayed on a monitor.
 
 ## Why Laravel?
 
