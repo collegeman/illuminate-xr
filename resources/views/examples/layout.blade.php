@@ -23,12 +23,36 @@ $contents = [
         ],
       ],
     ],
+    'Code' => [
+      'route' => '#',
+      'pages' => [
+        'Overview' => [
+          'route' => '#'
+        ]
+      ],
+
+    ],
     'VR' => [
       'route' => '#',
       'pages' => [
         'Overview' => [
           'route' => '#',
         ],
+        'Setting The Scene' => [
+          'route' => '#',
+        ],
+        'Cameras' => [
+
+        ],
+        'Hands and Tools' => [
+
+        ],
+        'Locomotion' => [
+
+        ],
+        'Physics and Collisions' => [
+
+        ]
       ]
     ],
     'Modeling' => [

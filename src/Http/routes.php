@@ -1,27 +1,58 @@
 <?php
+namespace Illuminate\Xr\Http;
+
+use Route;
+
+class ExamplePage {
+
+  protected $path;
+
+  public $namespace;
+
+  function __construct($path) {
+    $this->path = $path;
+    $this->namespace = "xr.examples.{$path}";
+  }
+
+  function route() {
+    return route($this->namespace);
+  }
+
+  function view($data) {
+    return function() use ($data) {
+      return view("illuminate-xr::examples." . $this->path, $data);
+    };
+  }
+
+  function viewWithTitle($title) {
+    return $this->view([
+      'title' => $title,
+    ]);
+  }
+
+  function redirect() {
+    return function () {
+      return redirect($this->route());
+    };
+  }
+
+}
+
+function ex($path) {
+  return new ExamplePage($path);
+}
 
 if (config('xr.examples')) {
-  Route::get('examples', function() {
-    return redirect(route('xr.examples.getting-started.introduction'));
+  Route::get('examples', ex('getting-started.introduction')->redirect())->name('xr.examples');
+
+  with(ex('getting-started.introduction'), function($ex) {
+    Route::get('examples/getting-started', $ex->redirect())->name('xr.examples.getting-started');
+    Route::get('examples/getting-started/introduction', $ex->viewWithTitle('Getting Started'))->name($ex->namespace);
   });
 
-  Route::get('examples/getting-started', function() {
-    return redirect(route('xr.examples.getting-started.introduction'));
-  })->name('xr.examples.getting-started');
+  with(ex('networking.overview'), function($ex) {
+    Route::get('examples/networking', $ex->redirect())->name('xr.examples.networking');
+    Route::get('examples/networking/overview', $ex->viewWithTitle('Networking'))->name($ex->namespace);
+  });
 
-  Route::get('examples/getting-started/introduction', function() {
-    return view('illuminate-xr::examples.getting-started.introduction', [
-      'title' => 'Getting Started'
-    ]);
-  })->name('xr.examples.getting-started.introduction');
-
-  Route::get('examples/networking', function() {
-    return redirect(route('xr.examples.networking.overview'));
-  })->name('xr.examples.networking');
-
-  Route::get('examples/networking/overview', function() {
-    return view('illuminate-xr::examples.networking.overview', [
-      'title' => 'Networking Overview'
-    ]);
-  })->name('xr.examples.networking.overview');
 }

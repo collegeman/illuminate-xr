@@ -59,7 +59,7 @@ of faces displayed on a monitor. That's what VR can be.
     <p>
       A-Frame is built on top of the ever-popular <a href="https://github.com/mrdoob/three.js/">three.js</a>,
       which is a lightweight library for rendering 3D with WebGL. A-Frame abstracts away a lot of the complexity
-      of coding directly with the three.js, allowing you to define Entity-Components through the familiar
+      of coding directly with the three.js API, allowing you to define Entity-Components through the familiar
       and simple syntax of HTML.
     </p>
     <p>
